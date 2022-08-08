@@ -1,0 +1,35 @@
+{
+    "name": "riche",
+    "version": "1.0.0",
+    "description": "A powerful library for interacting with the Discord RPC",
+    "keywords": [
+        "discord",
+        "api",
+        "rpc",
+        "typescript"
+    ],
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Andrew Antsiferov",
+        "email": "summet.dev@gmail.com",
+        "url": "https://github.com/antsif-a"
+    },
+    "main": "./build/index.js",
+    "types": "./build/index.d.ts",
+    "scripts": {
+        "prestart": "tsc",
+        "start": "node ./build/index.js",
+        "lint": "eslint . --cache",
+        "lint:fix": "eslint . --cache --fix"
+    },
+    "devDependencies": {
+        "@types/node": "^14.6.3",
+        "@typescript-eslint/eslint-plugin": "^5.30.7",
+        "@typescript-eslint/parser": "^5.30.7",
+        "eslint": "^8.20.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "typescript": "^4.0.2"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./build",
+        "declarationDir": "./build",
+        "module": "commonjs",
+        "target": "esnext",
+        "declaration": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "alwaysStrict": true,
+        "strict": true,
+        "resolveJsonModule": true,
+        "removeComments": false
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+}
