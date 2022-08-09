@@ -15,6 +15,9 @@
         "email": "summet.dev@gmail.com",
         "url": "https://github.com/antsif-a"
     },
+    "files": [
+        "build"
+    ],
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
     "scripts": {
