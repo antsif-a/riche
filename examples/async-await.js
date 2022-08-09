@@ -1,7 +1,7 @@
-const { RpcClient } = require('../build');
+const riche = require('../build');
 
 async function main() {
-  const client = RpcClient.create('1006301974075035679');
+  const client = riche.create('your-client-id-here');
   await client.connect();
   await client.setActivity({
     state: 'In a Group',

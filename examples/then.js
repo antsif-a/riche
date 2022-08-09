@@ -1,6 +1,6 @@
-const { RpcClient } = require('../build/index');
+const riche = require('../build');
 
-const client = RpcClient.create('1006301974075035679');
+const client = riche.create('your-client-id-here');
 client.connect().then(() => {
   client.setActivity({
     state: 'In a Group',
