@@ -4,7 +4,7 @@
         "es6": true
     },
     "parserOptions": {
-        "project": "./tsconfig.json"
+        "project": "./tsconfig.eslint.json"
     },
     "extends": [
         "airbnb-base",
@@ -12,13 +12,16 @@
     ],
     "rules": {
         "@typescript-eslint/indent": "off",
-        "no-plusplus": [
-            "error",
-            {
-                "allowForLoopAfterthoughts": true
-            }
+        "@typescript-eslint/lines-between-class-members": ["error",
+            "always", { "exceptAfterSingleLine": true }
+        ],
+        "no-plusplus": ["error",
+            { "allowForLoopAfterthoughts": true }
         ],
         "no-console": "off",
+        "no-multi-spaces": "off",
+        "no-bitwise": "off",
+        "no-restricted-exports": "off",
         "linebreak-style": "off"
     }
 }
