@@ -16,7 +16,7 @@ export default class IpcDriver {
         return JSON.parse(buffer.slice(8).toString());
     }
 
-    public static getIpcPath(id = 0): string {
+    public static getIpcPath(id = 0) {
         switch (process.platform) {
             case 'linux':
                 return `${process.env.XDG_RUNTIME_DIR}/discord-ipc-${id}`;
