@@ -22,8 +22,10 @@ export default class IpcDriver {
                 return `${process.env.XDG_RUNTIME_DIR}/discord-ipc-${id}`;
             case 'win32':
                 return `\\\\?\\pipe\\discord-ipc-${id}`;
+            case 'darwin':
+                return `${process.env.TMPDIR}/discord-ipc-${id}`;
             default:
-                return '';
+                throw new Error(`Platform '${process.platform}' is not supported at the moment`);
         }
     }
 }
