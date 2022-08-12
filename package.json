@@ -22,8 +22,6 @@
     "types": "./build/index.d.ts",
     "scripts": {
         "prepublish": "tsc",
-        "prestart": "tsc",
-        "start": "node ./build/index.js",
         "lint": "eslint . --cache",
         "lint:fix": "eslint . --cache --fix"
     },
