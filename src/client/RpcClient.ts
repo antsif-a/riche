@@ -5,7 +5,7 @@ import PayloadCommand from '../api/payload/PayloadCommand';
 
 export default class RpcClient {
     public static create(clientId: string) {
-        return new this(IpcRpcConnection.create(clientId));
+        return new RpcClient(IpcRpcConnection.create(clientId));
     }
 
     private readonly connection: RpcConnection;

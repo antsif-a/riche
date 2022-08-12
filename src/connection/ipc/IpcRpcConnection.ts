@@ -9,7 +9,7 @@ import RpcError from '../RpcError';
 
 export default class IpcRpcConnection implements RpcConnection {
     public static create(clientId: string): RpcConnection {
-        return new this(new Socket(), clientId);
+        return new IpcRpcConnection(new Socket(), clientId);
     }
 
     private readonly socket: Socket;
