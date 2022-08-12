@@ -1,4 +1,15 @@
-# riche
+<div align="center">
+    <h1>riche</h1>
+    <a href="https://www.npmjs.com/package/riche">
+        <img alt="version" src="https://img.shields.io/npm/v/riche"/>
+    </a>
+    <a href="https://www.npmjs.com/package/riche">
+        <img alt="size" src="https://img.shields.io/bundlephobia/min/riche"/>
+    </a>
+    <a href="https://app.codacy.com/gh/antsif-a/riche">
+        <img alt="code quality" src="https://img.shields.io/codacy/grade/64bbec46eea34605be3480e590bdaf00"/>
+    </a>
+</div>
 
 ## About
 
