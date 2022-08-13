@@ -1,4 +1,4 @@
-import RpcClient from "./client/RpcClient";
+import RpcClient from './client/RpcClient';
 
 export const { create } = RpcClient;
 export { default as RpcClient } from './client/RpcClient';
