@@ -21,12 +21,12 @@ export default class IpcDriver {
             return `\\\\?\\pipe\\discord-ipc-${id}`;
         }
 
-        const temp_dir = process.env.XDG_RUNTIME_DIR 
-                            || process.env.TMPDIR
-                            || process.env.TMP 
-                            || process.env.TEMP 
-                            || "/tmp";
+        const tmpDir = process.env.XDG_RUNTIME_DIR
+            || process.env.TMPDIR
+            || process.env.TMP
+            || process.env.TEMP
+            || '/tmp';
 
-        return `${temp_dir}/discord-ipc-${id}`;
+        return `${tmpDir}/discord-ipc-${id}`;
     }
 }
