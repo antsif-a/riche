@@ -22,9 +22,9 @@ export default class IpcDriver {
         }
 
         const temp_dir = process.env.XDG_RUNTIME_DIR 
+                            || process.env.TMPDIR
                             || process.env.TMP 
                             || process.env.TEMP 
-                            || process.env.TMPDIR
                             || "/tmp";
 
         return `${temp_dir}/discord-ipc-${id}`;
