@@ -1,6 +1,6 @@
 import RpcClient from './client/RpcClient';
 
-export const create = RpcClient.create;
+export const { create } = RpcClient;
 export { default as RpcClient } from './client/RpcClient';
 
 export type { default as Activity } from './api/activity/Activity';

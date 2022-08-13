@@ -16,11 +16,6 @@ const activity = {
 // riche's internal client id, replace with your own
 const client = riche.create('1006301974075035679');
 
-async function main() {
-  await client.connect();
-  await client.setActivity(activity);
-
-  console.log('Activity has been set! Check your Discord profile');
-}
-
-main();
+client.connect()
+  .then(() => client.setActivity(activity))
+  .then(() => console.log('Activity has been set! Check your Discord profile'));

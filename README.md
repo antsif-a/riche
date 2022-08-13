@@ -1,4 +1,15 @@
-# riche
+<div align="center">
+    <h1>riche</h1>
+    <a href="https://www.npmjs.com/package/riche">
+        <img alt="version" src="https://img.shields.io/npm/v/riche"/>
+    </a>
+    <a href="https://www.npmjs.com/package/riche">
+        <img alt="size" src="https://img.shields.io/bundlephobia/min/riche"/>
+    </a>
+    <a href="https://app.codacy.com/gh/antsif-a/riche">
+        <img alt="code quality" src="https://img.shields.io/codacy/grade/64bbec46eea34605be3480e590bdaf00"/>
+    </a>
+</div>
 
 ## About
 
@@ -33,20 +44,23 @@ Alternatively, you can use riche's internal id for testing: `1006301974075035679
 ```javascript
 const riche = require('riche');
 
+const activity = {
+  state: 'Signed in',
+  details: 'Using Discord',
+  timestamps: {
+    start: Date.now(),
+  },
+  assets: {
+    large_image: 'https://discord.com/assets/9f6f9cd156ce35e2d94c0e62e3eff462.png',
+    large_text: 'Discord',
+  },
+};
+
 const client = riche.create('your-client-id');
-client.connect().then(() => {
-  client.setActivity({
-    state: 'In a Group',
-    details: 'Competitive | In a Match',
-    timestamps: {
-      start: Date.now(),
-    },
-    assets: {
-      large_image: 'https://discord.com/assets/9f6f9cd156ce35e2d94c0e62e3eff462.png',
-      large_text: 'Discord',
-    },
-  }).then(() => console.log('Activity has been set! Check your Discord profile'));
-});
+
+client.connect()
+  .then(() => client.setActivity(activity))
+  .then(() => console.log('Activity has been set! Check your Discord profile'));
 ```
 
-See more examples [here](examples).
+See more examples [here](https://github.com/antsif-a/riche/tree/main/examples).

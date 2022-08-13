@@ -1,7 +1,12 @@
+import * as crypto from 'node:crypto';
 import RpcConnection from '../connection/RpcConnection';
 import IpcRpcConnection from '../connection/ipc/IpcRpcConnection';
 import Activity from '../api/activity/Activity';
 import PayloadCommand from '../api/payload/PayloadCommand';
+
+function randomNonce() {
+    return crypto.randomBytes(16).toString('hex');
+}
 
 export default class RpcClient {
     public static create(clientId: string) {
@@ -15,22 +20,22 @@ export default class RpcClient {
         this.connection.onError(console.error);
     }
 
+    private sendCommand(command: PayloadCommand, args: any) {
+        return this.connection.send({
+            cmd: command,
+            nonce: randomNonce(),
+            args,
+        });
+    }
+
     public connect() {
         return this.connection.open();
     }
 
     public setActivity(activity: Activity) {
-        if (!this.connection.isOpen()) {
-            throw new Error('Connection is closed');
-        }
-
-        return this.connection.send({
-            cmd: PayloadCommand.SetActivity,
-            nonce: '647d814a-4cf8-4fbb-948f-898abd24f55b',
-            args: {
-                pid: process.pid,
-                activity,
-            },
+        return this.sendCommand(PayloadCommand.SetActivity, {
+            pid: process.pid,
+            activity,
         });
     }
 }
