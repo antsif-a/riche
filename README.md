@@ -7,7 +7,7 @@
         <img alt="size" src="https://img.shields.io/bundlephobia/min/riche"/>
     </a>
     <a href="https://app.codacy.com/gh/antsif-a/riche">
-        <img alt="code quality" src="https://img.shields.io/codacy/grade/64bbec46eea34605be3480e590bdaf00"/>
+        <img alt="code quality" src="https://img.shields.io/github/workflow/status/antsif-a/riche/ESLint?label=eslint"/>
     </a>
 </div>
 
