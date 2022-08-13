@@ -17,15 +17,16 @@ export default class IpcDriver {
     }
 
     public static getIpcPath(id = 0) {
-        switch (process.platform) {
-            case 'linux':
-                return `${process.env.XDG_RUNTIME_DIR}/discord-ipc-${id}`;
-            case 'win32':
-                return `\\\\?\\pipe\\discord-ipc-${id}`;
-            case 'darwin':
-                return `${process.env.TMPDIR}/discord-ipc-${id}`;
-            default:
-                throw new Error(`Platform '${process.platform}' is not supported at the moment`);
+        if (process.platform === 'win32') {
+            return `\\\\?\\pipe\\discord-ipc-${id}`;
         }
+
+        const tmpDir = process.env.XDG_RUNTIME_DIR
+            || process.env.TMPDIR
+            || process.env.TMP
+            || process.env.TEMP
+            || '/tmp';
+
+        return `${tmpDir}/discord-ipc-${id}`;
     }
 }
