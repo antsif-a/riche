@@ -13,7 +13,7 @@ export default class IpcDriver {
     }
 
     public static decode(buffer: Buffer): Payload {
-        return JSON.parse(buffer.slice(8).toString());
+        return JSON.parse(buffer.subarray(8).toString());
     }
 
     public static getIpcPath(id = 0) {
