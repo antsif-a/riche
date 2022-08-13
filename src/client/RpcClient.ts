@@ -20,22 +20,22 @@ export default class RpcClient {
         this.connection.onError(console.error);
     }
 
+    private sendCommand(command: PayloadCommand, args: any) {
+        return this.connection.send({
+            cmd: command,
+            nonce: randomNonce(),
+            args,
+        });
+    }
+
     public connect() {
         return this.connection.open();
     }
 
     public setActivity(activity: Activity) {
-        if (!this.connection.isOpen()) {
-            throw new Error('Connection is closed');
-        }
-
-        return this.connection.send({
-            cmd: PayloadCommand.SetActivity,
-            nonce: randomNonce(),
-            args: {
-                pid: process.pid,
-                activity,
-            },
+        return this.sendCommand(PayloadCommand.SetActivity, {
+            pid: process.pid,
+            activity,
         });
     }
 }

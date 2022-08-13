@@ -79,6 +79,10 @@ export default class IpcRpcConnection implements RpcConnection {
     }
 
     public send(data: Payload): Promise<void> {
+        if (!this.isConnectionOpen) {
+            throw new Error('Connection is closed');
+        }
+
         return new Promise((resolve, reject) => {
             this.socket.write(IpcDriver.encode(OpCode.Frame, data), (error) => {
                 if (error) {
