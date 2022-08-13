@@ -22,6 +22,7 @@
     "types": "./build/index.d.ts",
     "scripts": {
         "prepublish": "tsc",
+        "build": "tsc",
         "lint": "eslint . --cache",
         "lint:fix": "eslint . --cache --fix"
     },
