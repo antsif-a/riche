@@ -60,4 +60,4 @@ client.connect().then(() => {
 });
 ```
 
-See more examples [here](examples).
+See more examples [here](https://github.com/antsif-a/riche/tree/main/examples).
