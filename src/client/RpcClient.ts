@@ -1,7 +1,12 @@
+import * as crypto from 'node:crypto';
 import RpcConnection from '../connection/RpcConnection';
 import IpcRpcConnection from '../connection/ipc/IpcRpcConnection';
 import Activity from '../api/activity/Activity';
 import PayloadCommand from '../api/payload/PayloadCommand';
+
+function randomNonce() {
+    return crypto.randomBytes(16).toString('hex');
+}
 
 export default class RpcClient {
     public static create(clientId: string) {
@@ -26,7 +31,7 @@ export default class RpcClient {
 
         return this.connection.send({
             cmd: PayloadCommand.SetActivity,
-            nonce: '647d814a-4cf8-4fbb-948f-898abd24f55b',
+            nonce: randomNonce(),
             args: {
                 pid: process.pid,
                 activity,
