@@ -6,8 +6,8 @@
     <a href="https://www.npmjs.com/package/riche">
         <img alt="size" src="https://img.shields.io/bundlephobia/min/riche"/>
     </a>
-    <a href="https://app.codacy.com/gh/antsif-a/riche">
-        <img alt="code quality" src="https://img.shields.io/codacy/grade/64bbec46eea34605be3480e590bdaf00"/>
+    <a href="https://github.com/antsif-a/riche/actions/workflows/eslint.yml">
+        <img alt="eslint" src="https://img.shields.io/github/workflow/status/antsif-a/riche/ESLint?label=eslint"/>
     </a>
 </div>
 

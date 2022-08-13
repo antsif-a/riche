@@ -1,6 +1,6 @@
 {
     "name": "riche",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "A powerful library for interacting with the Discord RPC",
     "homepage": "https://github.com/antsif-a/riche",
     "keywords": [
@@ -22,6 +22,7 @@
     "types": "./build/index.d.ts",
     "scripts": {
         "prepublish": "tsc",
+        "build": "tsc",
         "lint": "eslint . --cache",
         "lint:fix": "eslint . --cache --fix"
     },
