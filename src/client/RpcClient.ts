@@ -14,6 +14,7 @@ export default class RpcClient {
     }
 
     private readonly connection: RpcConnection;
+    private pid: number = process.pid;
 
     constructor(connection: RpcConnection) {
         this.connection = connection;
@@ -32,9 +33,13 @@ export default class RpcClient {
         return this.connection.open();
     }
 
+    public setPID(pid: number) {
+        this.pid = pid;
+    }
+
     public setActivity(activity: Activity) {
         return this.sendCommand(PayloadCommand.SetActivity, {
-            pid: process.pid,
+            pid: this.pid,
             activity,
         });
     }
