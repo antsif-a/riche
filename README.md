@@ -7,7 +7,7 @@
         <img alt="size" src="https://img.shields.io/bundlephobia/min/riche"/>
     </a>
     <a href="https://github.com/antsif-a/riche/actions/workflows/eslint.yml">
-        <img alt="eslint" src="https://img.shields.io/github/workflow/status/antsif-a/riche/ESLint?label=eslint"/>
+        <img alt="eslint" src="https://img.shields.io/github/actions/workflow/status/antsif-a/riche/eslint.yml?label=eslint"/>
     </a>
 </div>
 
